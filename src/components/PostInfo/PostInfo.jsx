@@ -1,12 +1,9 @@
 import { UserInfo } from '../UserInfo';
 import { CommentList } from '../CommentList';
-import commentsFromServer from '../../api/comments.json';
 import './PostInfo.scss';
 
 export const PostInfo = ({ post }) => {
-  const comments = commentsFromServer.filter(
-    comment => comment.postId === post.id,
-  );
+  const comments = post.comments || [];
 
   return (
     <div className="PostInfo">
